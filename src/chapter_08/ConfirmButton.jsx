@@ -8,10 +8,19 @@ class ConfirmButton extends React.Component {
             isConfirmed: false, //확인여부를 체크하기 위한 변수 : 초기값
         };
 
-        this.handleConfirm = this.handleConfirm.bind(this);
+        // this.handleConfirm = this.handleConfirm.bind(this); //bind방식
     }
 
-    handleConfirm() { //button의 event를 처리하기 위해서 eventHandler로 만듦.
+    //button의 event를 처리하기 위해서 eventHandler로 만듦.
+    //eventHandler - 1. bind방식
+    // handleConfirm() {
+    //     this.setState((prevState) => ({
+    //         isConfirmed: !prevState.isConfirmed,
+    //     }));
+    // }
+
+    //eventHandler - 2. class fields syntax 사용 (arrow function)
+    handleConfirm = () => {
         this.setState((prevState) => ({
             isConfirmed: !prevState.isConfirmed,
         }));
